@@ -1,0 +1,137 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context="SubwayRouteActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/mylayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/editTextStartStation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="출발역을 입력하세요(예: 강남역)" />
+
+            <EditText
+                android:id="@+id/editTextEndStation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextStartStation"
+                android:layout_marginTop="8dp"
+                android:hint="도착역을 입력하세요" />
+
+            <Button
+                android:id="@+id/buttonFindRoute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextEndStation"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:text="확인" />
+
+            <TextView
+                android:id="@+id/textViewTransfer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buttonFindRoute"
+                android:layout_marginTop="16dp"
+                android:text="환승역: "
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewTransfer"
+                android:layout_marginTop="11dp"
+                android:text="소요 시간: "
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_marginTop="190dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/imageViewSubwayMap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewDuration"
+                    android:layout_marginTop="-200dp"
+                    android:src="@drawable/subway_map"
+                    android:visibility="visible"
+                    tools:ignore="NotSibling" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:background="@color/lightgray"
+                    android:orientation="horizontal"
+                    android:scrollbars="horizontal"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintVertical_bias="0.545" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_horizontal2"
+                    android:layout_marginTop="180dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/lightgray"
+                    android:orientation="horizontal"
+                    android:scrollbars="horizontal"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintVertical_bias="0.545"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_horizontal3"
+                    android:layout_marginTop="280dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/lightgray"
+                    android:orientation="horizontal"
+                    android:scrollbars="horizontal"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintVertical_bias="0.545" />
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/buttonRefresh"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/re_button"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>
